@@ -5,6 +5,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBar from "@/components/StickyBar";
+import ConvexClientProvider from "@/components/ConvexClientProvider";
 import { SITE } from "@/lib/site";
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-outfit" });
@@ -25,12 +26,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${outfit.variable} ${kaushan.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
-        <AnnouncementBar />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <div className="h-14 md:hidden" aria-hidden />
-        <StickyBar />
+        <ConvexClientProvider>
+          <AnnouncementBar />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <div className="h-14 md:hidden" aria-hidden />
+          <StickyBar />
+        </ConvexClientProvider>
       </body>
     </html>
   );

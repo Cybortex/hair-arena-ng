@@ -24,9 +24,14 @@ export default function BuyBox({ p }: { p: Product }) {
         </label>
       )}
       <p className={`mt-4 font-semibold ${sold ? "text-red-700" : "text-emerald-700"}`}>{sold ? "Sold out" : "In stock"}</p>
-      <a href={waLink(msg)} target="_blank" rel="noopener noreferrer" className={`${btn} mt-3 w-full`}>{sold ? "Ask when it's back" : "Order on WhatsApp"}</a>
+      {!sold && (
+        <a href={`/checkout?slug=${encodeURIComponent(p.slug)}${v ? `&variant=${encodeURIComponent(v.label)}` : ""}`} className={`${btn} mt-3 w-full`}>
+          Pay Online (Card / Transfer)
+        </a>
+      )}
+      <a href={waLink(msg)} target="_blank" rel="noopener noreferrer" className={`${sold ? btn : btnLine} mt-2 w-full`}>{sold ? "Ask when it's back" : "Order on WhatsApp"}</a>
       <a href={`tel:${SITE.phone.tel}`} className={`${btnLine} mt-2 w-full`}>Call {SITE.phone.label}</a>
-      <ul className="mt-4 grid gap-1 text-sm text-ink/75"><li>Worldwide delivery available</li><li>Order by WhatsApp or DM</li><li>Wholesale and dropshipping available</li></ul>
+      <ul className="mt-4 grid gap-1 text-sm text-ink/75"><li>Worldwide delivery available</li><li>Secure online payment via Paystack</li><li>Wholesale and dropshipping available</li></ul>
     </aside>
   );
 }
