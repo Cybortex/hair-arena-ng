@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #14090f;
+  --color-magenta: #9b1050;
+  --color-pink: #ff5fa8;
+  --color-yellow: #ffd400;
+  --color-blush: #fff5f9;
+  --color-line: #f2d3e1;
+  --font-display: var(--font-outfit), system-ui, sans-serif;
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+  --font-script: var(--font-kaushan), cursive;
+}
+
+html { scroll-behavior: smooth; }
+body { background-color: var(--color-blush); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+/* Pink line draws in under headings */
+.rule { position: relative; padding-bottom: .7rem; }
+.rule::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 4.5rem; background: var(--color-pink); transform-origin: left; animation: draw 1s ease-out both; }
+@keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Slow shine across the main yellow button */
+.shine { position: relative; overflow: hidden; }
+.shine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.7) 50%, transparent 65%); transform: translateX(-120%); animation: shine 5s ease-in-out 1.5s infinite; pointer-events: none; }
+@keyframes shine { to { transform: translateX(120%); } }
+
+/* Fade-up as sections scroll into view */
+.reveal { animation: rise .8s ease-out both; }
+@supports (animation-timeline: view()) { .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+summary::-webkit-details-marker { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rule::after, .shine::after, .reveal { animation: none !important; }
+}
