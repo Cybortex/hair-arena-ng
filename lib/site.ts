@@ -49,6 +49,12 @@ export const PRODUCTS: Product[] = [
   { slug: "premium-human-hair-wig", name: "Premium Human Hair Wig", category: "wigs", status: "sold-out", price: 450000, images: 2,
     blurb: "Available in two colours and 1B when in stock.",
     specs: [["Hair type", "Human hair"], ["Colours", "Two colours and 1B"]] },
+  { slug: "copper-blunt-bob", name: "Copper Blunt Cut Bob Wig", category: "wigs", status: "sale", price: 150000, salePrice: 130000, images: 2,
+    blurb: "Sleek ginger copper blunt cut bob wig with rich salon luster. On discount sale.",
+    specs: [["Hair type", "Straight human hair"], ["Style", "Blunt cut bob"], ["Colour", "Copper ginger"], ["Closure", "Lace closure"]] },
+  { slug: "auburn-wholesale-bundles", name: "Auburn Luxury Bundles & Closure Set", category: "frontals-closures", status: "in-stock", price: 180000, images: 2,
+    blurb: "Silky premium auburn straight bundles paired with matching HD lace closure.",
+    specs: [["Hair type", "Vietnamese straight bundles"], ["Lace", "HD closure"], ["Colour", "Auburn copper"], ["Grade", "Pure raw human hair"]] },
 ];
 
 export const SERVICES = [

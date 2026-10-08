@@ -65,6 +65,8 @@ Until a file exists, its slot shows a plain pink block, and it appears live when
 | `product-piano-pixie-curl-wig-1.jpg` to `-3.jpg` | 1000x1250 | Product |
 | `product-hd-lagos-frontal-1.jpg` to `-2.jpg` | 1000x1250 | Product |
 | `product-premium-human-hair-wig-1.jpg` to `-2.jpg` | 1000x1250 | Product |
+| `product-copper-blunt-bob-1.jpg` to `-2.jpg` | 1000x1250 | Product |
+| `product-auburn-wholesale-bundles-1.jpg` to `-2.jpg` | 1000x1250 | Product |
 
 For each new product, use `product-<slug>-1.jpg`, `-2.jpg` and so on, matching the slug in `lib/site.ts`. The first image is the card and main image.
 
