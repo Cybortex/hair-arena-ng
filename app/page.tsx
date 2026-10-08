@@ -17,7 +17,15 @@ export default function Home() {
             <p className="mt-5 max-w-md text-lg text-white/90">Wigs, closure and frontal ventilation and repair, and revamp services. Delivered worldwide from Area 2, Abuja.</p>
             <div className="mt-7 flex flex-wrap gap-3"><Link href="/shop" className={btn}>Shop wigs</Link><a href={SITE.wa} target="_blank" rel="noopener noreferrer" className={btnLine}>Order on WhatsApp</a></div>
           </div>
-          <Photo src="hero-wig.jpg" alt="Premium styled human hair wig crafted by The Hair Arena" priority sizes="(min-width:768px) 50vw, 100vw" className="mx-auto aspect-[4/5] w-full max-w-md rounded-3xl border-4 border-pink" />
+          <div className="mx-auto flex w-full max-w-sm flex-col items-center">
+            <div className="relative aspect-square w-full max-w-[340px] overflow-hidden rounded-3xl border-4 border-pink shadow-2xl">
+              <Photo src="hero-wig.jpg" alt="Premium styled human hair wig crafted by The Hair Arena" priority sizes="(min-width:768px) 340px, 90vw" className="size-full" />
+            </div>
+            <div className="mt-4 flex items-center gap-2 rounded-full border border-pink/40 bg-white/10 px-4 py-1.5 text-xs font-semibold backdrop-blur-md">
+              <span className="size-2 rounded-full bg-yellow" />
+              <span>100% Raw Human Hair · Abuja Showroom</span>
+            </div>
+          </div>
         </div>
       </section>
 
